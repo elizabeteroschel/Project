@@ -1,10 +1,10 @@
 
-from model import db, User, Favorite, Comment, Rating, Books
+from model import db, User, Favorite, Comment, Rating, Book
 
-def create_user(email, password):
+def create_user(username, email, password):
     """Create and return a new user."""
 
-    user = User(email=email, password=password)
+    user = User(username=username, email=email, password=password)
 
     db.session.add(user)
     db.session.commit()
@@ -35,11 +35,11 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
-def create_book(title, author, average_rating, isbn, num_pages):
+def create_book(title, authors, average_rating, isbn, num_pages):
     """Create and return a new book."""
 
-    movie = Book(title = title,
-                  author = author,
+    book = Book(title = title,
+                  authors = authors,
                   average_rating = average_rating,
                   isbn = isbn,
                   num_pages = num_pages
@@ -52,18 +52,18 @@ def create_book(title, author, average_rating, isbn, num_pages):
 
 
 def get_book():
-    """Return all ."""
+    """Return all books ."""
 
     return Book.query.all()
 
 
 def get_book_by_id(movie_id):
-    """Return a movie by primary key."""
+    """Return a book by primary key."""
 
     return Book.query.get(book_id)
 
 
-def create_rating(user, movie, score):
+def create_rating(user, book):
     """Create and return a new rating."""
 
     rating = Rating(user=user, book=book, )
@@ -75,6 +75,6 @@ def create_rating(user, movie, score):
 
 
 
-if __name__ == '__main__':
-    from server import app
-    connect_to_db(app)
+# if __name__ == '__main__':
+    # from server import app
+    # connect_to_db(app)

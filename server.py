@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request
 import requests
-
+from model import connect_to_db
+import crud
+from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-
+app.secret_key = "dev"
+app.jinja_env.undefined = StrictUndefined
 
 @app.route('/')
 def homepage():
@@ -57,6 +60,22 @@ def register_user():
     return redirect('/')
 
 
+# @app.route('/register', methods=['POST'])
+# def register_user():
+#     email = request.form['email']
+#     password = request.form['password']
+
+#     user = User.query.filter(User.email == email).first()
+#     if user:
+#         return 'A user already exists with that email.'
+#     else:
+#         new_user = User(email=email, password=password)
+#         db.session.add(new_user)
+#         db.session.commit(new_user)
+
+#         return redirect('/login-form')    
+
+
 @app.route('/users/<user_id>')
 def show_user(user_id):
     """Show details on a particular user."""
@@ -69,5 +88,6 @@ def show_user(user_id):
 
 
 if __name__ == '__main__':
+    connect_to_db(app)
     app.debug = True
     app.run(host='0.0.0.0')

@@ -88,7 +88,7 @@ class Book(db.Model):
                 primary_key = True,
                 autoincrement = True,)  
     title = db.Column(db.String(100), nullable = False, unique = True,) 
-    author = db.Column(db.String(50), nullable = False,)
+    authors = db.Column(db.String(50), nullable = False,)
     genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id')) 
     average_rating = db.Column(db.Float(5), nullable = False,)
     rating_count = db.Column(db.Integer, nullable = False,)
@@ -96,7 +96,7 @@ class Book(db.Model):
     num_pages = db.Column(db.Integer, nullable = False,)
 
     def __repr__(self):
-        return f'<Book book_id={self.book_id} title={self.title} author={self.author}>'
+        return f'<Book book_id={self.book_id} title={self.title} authors={self.authors}>'
 
 
 class Genre(db.Model):
@@ -120,7 +120,7 @@ class Genrebook(db.Model):
     genrebook_id = db.Column (db.Integer,
                             primary_key = True,
                             autoincrement = True,)   
-    genre_id = db.Column(db.String, db.ForeignKey('genres.genre_id')) 
+    genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id')) 
     book_id = db.Column(db.Integer, db.ForeignKey('books.book_id')) 
 
     book = db.relationship('Book', backref='genrebooks')
