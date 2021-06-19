@@ -87,12 +87,11 @@ class Book(db.Model):
     book_id = db.Column(db.Integer,
                 primary_key = True,
                 autoincrement = True,)  
-    title = db.Column(db.String(100), nullable = False, unique = True,) 
-    authors = db.Column(db.String(50), nullable = False,)
-    genre_id = db.Column(db.Integer, db.ForeignKey('genres.genre_id')) 
-    average_rating = db.Column(db.Float(5), nullable = False,)
-    rating_count = db.Column(db.Integer, nullable = False,)
-    isbn = db.Column(db.String(50), nullable = False,)
+    title = db.Column(db.String, nullable = False,) 
+    authors = db.Column(db.String, nullable = False,)
+    average_rating = db.Column(db.Float, nullable = False,)
+    rating_count = db.Column(db.Integer, nullable = True,)
+    isbn = db.Column(db.String, nullable = False,)
     num_pages = db.Column(db.Integer, nullable = False,)
 
     def __repr__(self):
