@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, flash, redirect, render_template, request
 import requests
 from model import connect_to_db
 import crud
@@ -25,12 +25,12 @@ def all_books():
 
 
 @app.route('/books/<book_id>')
-def show_movie(book_id):
+def show_book(book_id):
     """Show details on a particular book."""
 
-    movie = crud.get_book_by_id(book_id)
+    book = crud.get_book_by_id(book_id)
 
-    return render_template('book_details.html', book=book)
+    return render_template('book_detail.html', book=book)
 
 
 # @app.route('/users')
@@ -38,7 +38,6 @@ def show_movie(book_id):
 #     """View all users."""
 
 #     users = crud.get_users()
-
 #     return render_template('all_users.html', users=users)
 
 
@@ -46,7 +45,9 @@ def show_movie(book_id):
 def register_user():
     """Create a new user."""
 
-    usernama = request.form.get('username')
+    username = request.form.get('username')
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
     email = request.form.get('email')
     password = request.form.get('password')
 
@@ -54,7 +55,7 @@ def register_user():
     if user:
         flash('Cannot create an account with that email. Try again.')
     else:
-        crud.create_user(email, password)
+        crud.create_user(username, first_name, last_name, email, password)
         flash('Account created! Please log in.')
 
     return redirect('/')
@@ -76,13 +77,13 @@ def register_user():
 #         return redirect('/login-form')    
 
 
-@app.route('/users/<user_id>')
-def show_user(user_id):
-    """Show details on a particular user."""
+# @app.route('/users/<user_id>')
+# def show_user(user_id):
+#     """Show details on a particular user."""
 
-    user = crud.get_user_by_id(user_id)
+#     user = crud.get_user_by_id(user_id)
 
-    return render_template('user_details.html', user=user)
+#     return render_template('user_details.html', user=user)
 
 
 

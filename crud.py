@@ -59,10 +59,12 @@ def get_book():
     return Book.query.all()
 
 
-def get_book_by_id(movie_id):
+def get_book_by_id(book_id):
     """Return a book by primary key."""
 
     return Book.query.get(book_id)
+
+   
 
 
 def create_rating(user, book, rating):

@@ -19,9 +19,8 @@ books_in_db = []
 with open ('data/books.csv', newline = '') as csvfile:
     book_data = csv.DictReader(csvfile)
 
-# with open ('data/genre.csv', newline = '') as csvfile:
-#     book_data = csv.DictReader(csvfile)
-#   print(csvfile)
+# 
+  
 
 
     for book in book_data:

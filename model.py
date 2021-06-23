@@ -70,7 +70,7 @@ class Rating(db.Model):
                 autoincrement = True,)  
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id')) 
     book_id = db.Column(db.Integer, db.ForeignKey('books.book_id')) 
-    rating = db.Column(db.Integer, nullable = False,)
+    rating = db.Column(db.Integer, nullable = False,) # maybe chamge for String because I want the user make a review
 
     book = db.relationship('Book', backref='ratings')
     user = db.relationship('User', backref='ratings')

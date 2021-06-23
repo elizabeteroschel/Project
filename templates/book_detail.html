@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ movie.title }} - Details{% endblock %}
+{% block title %}{{ book.title }} - Details{% endblock %}
 
 {% block body %}
 <h1>{{ book.title }}</h1>
 <ul>
-  {% for book in books %}
     <li>
-      <a href="/books/{{ book.book_id }}">
-        {{ book.title }}
-      </a>
+        <p>Book Title: {{ book.title }}</p>
+        <p>Author(s): {{ book.authors }}</p>
+        <p>Average Rating: {{book.average_rating }}</p>
+        <p>Rating Count: {{book.rating_count}}</p> 
+        <p>Isbn Number: {{book.isbn}}</p>
+        <p>Number of Pages: {{book.num_pages}}</p>
     </li>
-  {% endfor %}
 </ul>
-<p>
-  {{ book.overview }}
-</p>
 
-<!-- <img src="{{ movie.poster_path }}"> -->
+<h2>Search this book on Google!</h2>
+<a href="https://www.google.com/search?q={{ book.isbn }}">Search here</a>
+
 {% endblock %}
