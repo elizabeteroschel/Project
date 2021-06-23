@@ -19,7 +19,7 @@ def homepage():
 def all_books():
     """View all books."""
 
-    movies = crud.get_book()
+    books = crud.get_book()
 
     return render_template('all_books.html', books=books)
 
@@ -33,13 +33,13 @@ def show_movie(book_id):
     return render_template('book_details.html', book=book)
 
 
-@app.route('/users')
-def all_users():
-    """View all users."""
+# @app.route('/users')
+# def all_users():
+#     """View all users."""
 
-    users = crud.get_users()
+#     users = crud.get_users()
 
-    return render_template('all_users.html', users=users)
+#     return render_template('all_users.html', users=users)
 
 
 @app.route('/users', methods=['POST'])
