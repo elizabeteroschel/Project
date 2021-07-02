@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, render_template, request
+from flask import Flask, flash, redirect, render_template, request, session
 import requests
 from model import connect_to_db
 import crud
@@ -33,7 +33,7 @@ def show_book(book_id):
     return render_template('book_detail.html', book=book)
 
 
-@app.route('/allusers')
+@app.route('/users')
 def all_users():
     """View all users."""
 
@@ -61,45 +61,40 @@ def register_user():
     return render_template('homepage.html')
 
 
-# @app.route('/register', methods=['POST'])
-# def register_user():
-#     email = request.form['email']
-#     password = request.form['password']
-
-#     user = User.query.filter(User.email == email).first()
-#     if user:
-#         return 'A user already exists with that email.'
-#     else:
-#         new_user = User(email=email, password=password)
-#         db.session.add(new_user)
-#         db.session.commit(new_user)
-
-#         return redirect('/login-form') 
 
 @app.route('/detail')
 def user_detail():
     """View user profile"""
 
-    return render_template('user_detail.html', user=user)
+    logged_in_user = session.get('user_id')
+
+    if logged_in_user != None:
+        user = crud.get_user_by_id(session['user_id'])
+        return render_template('user_detail.html', user=user)
+
+    return redirect('/')
+    
 
 
 @app.route('/login', methods=['POST'])
 def log_in():
-    username = request.form.get('user.username')
-    password = request.form.get('user.password')
-
+    username = request.form.get('username')
+    password = request.form.get('password') 
+    # print(username)
     user = crud.get_user_by_username(username)
 
     if user and user.password == password:
-        session['user_id'] = user_id
-        session['username']= username
         flash("Logged in!")
-        session['password'] = password
+        session['user_id'] = user.user_id
+        
+        return redirect('/detail')
     
     else:
         flash ('Incorrect username or password. Try again.')
+
+        return redirect ('/')
        
-    return redirect('/detail')
+    
 
 # get all forms input (username and password)
 # crud function query user based on that input(username )
@@ -109,17 +104,6 @@ def log_in():
 #  return to any page I want (wx: homepage or user) 
 # flash message
     
-
-@app.route('/users/<user_id>')
-def show_user(user_id):
-    """Show details on a particular user."""
-
-    user = crud.get_user_by_id(user_id)
-
-    return render_template('user_details.html', user=user)
-
-
-
 
 if __name__ == '__main__':
     connect_to_db(app)
