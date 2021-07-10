@@ -3,6 +3,8 @@ import requests
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
+import django
+
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -61,7 +63,6 @@ def register_user():
     return render_template('homepage.html')
 
 
-
 @app.route('/detail')
 def user_detail():
     """View user profile"""
@@ -74,7 +75,6 @@ def user_detail():
 
     return redirect('/')
     
-
 
 @app.route('/login', methods=['POST'])
 def log_in():
@@ -93,17 +93,18 @@ def log_in():
         flash ('Incorrect username or password. Try again.')
 
         return redirect ('/')
-       
-    
 
-# get all forms input (username and password)
-# crud function query user based on that input(username )
-# if get user right user name and password and add to session (ex user id)
 
-#if dont find the user back none (flash message log in failed)
-#  return to any page I want (wx: homepage or user) 
-# flash message
-    
+@app.route('/logout')
+def log_out():
+
+    return redirect ('/') 
+
+@app.route('/search')
+def search_books():
+
+    return redirect('/books')
+           
 
 if __name__ == '__main__':
     connect_to_db(app)

@@ -78,6 +78,11 @@ def create_rating(user, book, rating):
 
     return rating
 
+def search_books(title, authors):
+
+    searching = Search(title=title, authors=authors) 
+
+    return User.query.get(book) 
 
 
 if __name__ == '__main__':

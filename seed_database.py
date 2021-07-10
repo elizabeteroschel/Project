@@ -15,11 +15,10 @@ model.connect_to_db(server.app)
 model.db.create_all()
 
 books_in_db = []
-# genres_in_db = []
 with open ('data/books.csv', newline = '') as csvfile:
     book_data = csv.DictReader(csvfile)
 
-# 
+ 
   
 
 
@@ -40,14 +39,6 @@ with open ('data/books.csv', newline = '') as csvfile:
                                     num_pages
                                     )
         books_in_db.append(db_book)
-
-    # for genre in genre_data:
-    #     genre = (book['genre'])
-                                    
-    
-    #     db_book = crud.create_genre(genre
-    #                                 )
-    #     genres_in_db.append(db_genre)
 
 
 for n in range(10):

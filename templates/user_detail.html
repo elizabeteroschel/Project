@@ -3,5 +3,14 @@
 {% block title %}{{ user.username }}'s Page{% endblock %}
 
 {% block body %}
+
 <h1>{{ user.first_name }} </h1>
+
+    <form action="/logout">
+      <p>
+    <button>Log out</button>
+      </p>
+      
+    </form> 
 {% endblock %}
+  
