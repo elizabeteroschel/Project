@@ -1,5 +1,5 @@
 
-from model import db, User, Favorite, Comment, Rating, Book
+from model import db, User, Favorite, Comment, Rating, Book, connect_to_db
 
 
 def create_user(username, first_name, last_name, email, password):
@@ -78,11 +78,23 @@ def create_rating(user, book, rating):
 
     return rating
 
-def search_books(title, authors):
+# def search_books(title):
 
-    searching = Search(title=title, authors=authors) 
+#     searching = Search(title=title) 
 
-    return User.query.get(book) 
+#     return Employee.query.filter(Employee.name.like('%title'))
+
+# def search_books_by key_word (title): 
+
+def search_books(title_keywords):
+
+    books = Book.query.filter(Book.title.like('%' + title_keywords +'%')).all()
+
+    return books
+    
+    
+    
+
 
 
 if __name__ == '__main__':

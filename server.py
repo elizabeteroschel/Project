@@ -3,7 +3,6 @@ import requests
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
-import django
 
 
 app = Flask(__name__)
@@ -100,10 +99,39 @@ def log_out():
 
     return redirect ('/') 
 
+
 @app.route('/search')
 def search_books():
+   
+   title_keywords = request.args.get('title_keywords')
 
-    return redirect('/books')
+   book_results_list = crud.search_books(title_keywords)
+
+   return render_template('all_books.html', books=book_results_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # if request.method == 'POST':
+    #     form = request.form
+    #     search_value = form ['search_string']
+    #     search = 
+    #     "%{}%".format(search_value)
+    #     reaults = colbert_friends.query.filter(book_title.title.like(search)).all()
+        # return render_template
+
+    # return redirect('/books')
            
 
 if __name__ == '__main__':
