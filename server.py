@@ -70,9 +70,30 @@ def user_detail():
 
     if logged_in_user != None:
         user = crud.get_user_by_id(session['user_id'])
-        return render_template('user_detail.html', user=user)
+        favorite_books = crud.get_favorites_by_user_id(user.user_id)
+        
+        return render_template('user_detail.html', user=user, favorite_books=favorite_books)
 
     return redirect('/')
+    
+
+@app.route('/login_form')
+def login_form():
+
+    return render_template('login.html')
+
+@app.route('/signup_form')
+def signup_form():
+    return render_template('create_a.html')
+
+@app.route('/add_favorite', methods=['POST'])
+def add_favorite():
+    book_id = request.form.get('book_id')
+    user_id = session['user_id']
+    favorite = crud.create_favorite(user_id, book_id)
+    
+    return redirect ('/detail')
+    
     
 
 @app.route('/login', methods=['POST'])
@@ -86,7 +107,7 @@ def log_in():
         flash("Logged in!")
         session['user_id'] = user.user_id
         
-        return redirect('/detail')
+        return redirect('/')
     
     else:
         flash ('Incorrect username or password. Try again.')
@@ -96,7 +117,8 @@ def log_in():
 
 @app.route('/logout')
 def log_out():
-
+    session.clear()
+    flash("Logged out!")
     return redirect ('/') 
 
 
@@ -104,11 +126,11 @@ def log_out():
 def search_books():
    
    title_keywords = request.args.get('title_keywords')
+   title_keywords = title_keywords.title()
 
    book_results_list = crud.search_books(title_keywords)
 
    return render_template('all_books.html', books=book_results_list)
-
 
 
 

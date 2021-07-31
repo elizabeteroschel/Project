@@ -12,6 +12,15 @@ def create_user(username, first_name, last_name, email, password):
 
     return user
 
+def create_favorite(user_id, book_id):
+    """Create and return a new user favorite ."""
+
+    favorite = Favorite(user_id=user_id, book_id=book_id)
+
+    db.session.add(favorite)
+    db.session.commit()
+
+    return favorite 
 
 def get_users():
     """Return all users."""
@@ -58,6 +67,10 @@ def get_book():
 
     return Book.query.all()
 
+def get_favorites_by_user_id(user_id):
+    """Return favorite books by user_id ."""
+
+    return Favorite.query.filter(Favorite.user_id == user_id).all()
 
 def get_book_by_id(book_id):
     """Return a book by primary key."""

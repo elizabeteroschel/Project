@@ -15,6 +15,14 @@
     </li>
 </ul>
 
+<!-- create a form to favorite book and them creat the action the route in server and  -->
+<h2>Save in your favorites</h2>
+    <form action="/add_favorite" method="POST">
+        <p>Save in your favorites</p>
+        <input name="book_id" value={{ book.book_id }} hidden>
+        <input type="submit">
+  </form>
+
 <h2>Search this book on Google!</h2>
 <a href="https://www.google.com/search?q={{ book.isbn }}">Search here</a>
 

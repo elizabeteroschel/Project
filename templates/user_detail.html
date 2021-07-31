@@ -5,6 +5,15 @@
 {% block body %}
 
 <h1>{{ user.first_name }} </h1>
+<ul>
+{% for favorite in favorite_books %}
+<li>
+  <a href="/books/{{ favorite.book.book_id }}">
+  {{ favorite.book.title }}
+  </a>
+</li>
+{% endfor %}
+</ul>
 
     <form action="/logout"> 
       <p>
