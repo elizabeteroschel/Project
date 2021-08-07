@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h2>Create an Account</h2>
+<!-- <h2>Create an Account</h2>
   <form action="/users" method="POST">
     
     <p>
@@ -22,6 +22,47 @@
     <p>
       <input type="submit">
     </p>
+  </form> -->
+  <ul>
+  <h2>Create an Account</h2>
+  <form action="/users" method="POST">
+  </ul>
+    <ul>
+    <form class="row g-3"> 
+    <div class="col-md-4">
+      <i class="bi bi-person"></i>
+      <label for="inputEmail4" class="form-label">Username</label>
+      <input type="text" class="form-control" id="inputEmail4" name="username">
+    </div>
+  </ul>
+  <ul>
+    <div class="col-md-4">
+      <label for="inputEmail4" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="inputEmail4" name="first_name">
+    </div>
+  </ul>
+  <ul>
+    <div class="col-md-4">
+      <label for="inputEmail4" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="inputEmail4" name="last_name">
+    </div>
+  </ul>
+  <ul>
+    <div class="col-md-4">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" name="email">
+    </div>
+  </ul>
+  <ul>
+    <div class="col-md-4">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" name="password">
+    </div>
+  </ul>
+  <ul>
+    <p>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </p>
+</ul>
   </form>
-  
   {% endblock %}

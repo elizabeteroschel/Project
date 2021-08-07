@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ user.username }}'s Page{% endblock %}
+{% block title %} 
+
+{{user.username }}'s Page
+
+{% endblock %}
 
 {% block body %}
 
@@ -14,12 +18,19 @@
 </li>
 {% endfor %}
 </ul>
-
+  <ul>
     <form action="/logout"> 
-      <p>
-      <button>Log out</button>
+        <p>
+        <button type="submit" class="btn btn-primary">Log Out</button>
       </p>
-      
+    </ul>
     </form> 
 {% endblock %}
-  
+<div class="card" style="width: 18rem;">
+  <img src="/books/{{ favorite.book.book_id }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Book Title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>

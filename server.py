@@ -132,30 +132,7 @@ def search_books():
 
    return render_template('all_books.html', books=book_results_list)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # if request.method == 'POST':
-    #     form = request.form
-    #     search_value = form ['search_string']
-    #     search = 
-    #     "%{}%".format(search_value)
-    #     reaults = colbert_friends.query.filter(book_title.title.like(search)).all()
-        # return render_template
-
-    # return redirect('/books')
            
-
 if __name__ == '__main__':
     connect_to_db(app)
     app.debug = True

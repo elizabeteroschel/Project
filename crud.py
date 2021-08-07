@@ -106,7 +106,10 @@ def search_books(title_keywords):
     return books
     
     
-    
+def all_users():
+     """Show all users."""
+
+     return User.query.all()   
 
 
 
