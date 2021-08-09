@@ -1,17 +1,79 @@
 
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+h1{
+  color:rgb(39, 46, 25);
+  font-family:unset;
   font-weight: bold;
+  font-weight: 500;
   margin: 0;
   text-align: center;
   margin: 20px 0 30px;
 }
 
-p {
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 20px;
-  letter-spacing: 0.5px;
-  margin: 20px 0 30px;
+h2{
+  color:rgb(39, 46, 25);
+  font-family:sans-serif;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  margin: 10px 0 20px;
 }
 
+body{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 650px;
+    z-index: -1;
+    background-image: url(../img/green_book.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+h3{
+  color:rgb(39, 46, 25);
+}
+
+#search{
+  position: center;
+  text-align: center;
+  font-family:sans-serif;
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 1.45rem;
+  margin: 30px 0 30px;
+  width: -50vw;
+  height: -50vh;
+
+
+}
+.topnave{
+  color:transparent;
+} 
+
+.display-books div{ 
+  display: block;
+  position: center;
+  margin: 0;
+  width: auto;
+
+}
+div.href{
+  color: black;
+}
+
+form{
+  position: center;
+}
+
+#container{
+  box-sizing: border-box;
+  opacity: unset;
+}

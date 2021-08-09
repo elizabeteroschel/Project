@@ -2,15 +2,23 @@
 {% block title %}All Books{% endblock %}
 
 {% block body %}
+<div class="header">
+<link href="/static/css/homepage.css" rel="stylesheet">
   <h1>All Books</h1>
+</div>
 
-  <ul>
-    {% for book in books %}
-      <li>
-        <a href="/books/{{ book.book_id }}">
+  <div class="display-books" id="booklist">
+      {% for book in books %}
+        <li>
+          <a href="/books/{{ book.book_id }}">
           {{ book.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+          </a>
+        </li>
+      </div>      
+      {% endfor %}
+
+   <div id="container"></div>
+
+   </div>   
+    
 {% endblock %}

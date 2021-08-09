@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block body %}
-
-<ul><h2>Log In</h2></ul>
+<link href="/static/css/homepage.css" rel="stylesheet">
+<ul><h1>Log In</h1></ul>
     <form action="/login" method="POST">
       <ul>
         <div class="mb-3">
           <div class="col-4">
             <i class="bi bi-person"></i>
           <label for="exampleInputEmail1" class="form-label">Username</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+          <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
         </div>
       </ul>
       <ul>

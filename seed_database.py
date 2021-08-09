@@ -39,19 +39,3 @@ with open ('data/books.csv', newline = '') as csvfile:
                                     num_pages
                                     )
         books_in_db.append(db_book)
-
-
-for n in range(10):
-    username = f'user{n}'
-    first_name = 'test'
-    last_name = 'testtest'
-    email = f'user{n}@test.com'  
-    password = 'test'
-
-    user = crud.create_user(username, first_name, last_name, email, password)
-
-    # for _ in range(10):
-    #     random_book = choice(books_in_db)
-    #     score = randint(1, 5)
-
-    #     crud.create_rating(user, random_book, ratings)

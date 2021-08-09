@@ -82,9 +82,11 @@ def login_form():
 
     return render_template('login.html')
 
+
 @app.route('/signup_form')
 def signup_form():
     return render_template('create_a.html')
+
 
 @app.route('/add_favorite', methods=['POST'])
 def add_favorite():
@@ -95,7 +97,6 @@ def add_favorite():
     return redirect ('/detail')
     
     
-
 @app.route('/login', methods=['POST'])
 def log_in():
     username = request.form.get('username')

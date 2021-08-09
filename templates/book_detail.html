@@ -3,6 +3,7 @@
 {% block title %}{{ book.title }} - Details{% endblock %}
 
 {% block body %}
+<link href="/static/css/homepage.css" rel="stylesheet">
 <h1>{{ book.title }}</h1>
 <ul>
     <li>
@@ -16,14 +17,20 @@
 </ul>
 
 <!-- create a form to favorite book and them creat the action the route in server and  -->
-<h2>Save in your favorites</h2>
+<h3>Save in your favorites</h3>
     <form action="/add_favorite" method="POST">
         <p><i class="bi bi-bookmark-heart"> </i>Save in your favorites</p>
         <input name="book_id" value={{ book.book_id }} hidden>
-        <input type="submit">
+        <ul>
+            <p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </p>
+          </ul>     
   </form>
 
-<h2>Search this book on Google!</h2>
-<a href="https://www.google.com/search?q={{ book.isbn }}">Search here</a>
-
+  <!-- LINK TO SEARCH BOOK ON GOOGLE -->
+<h3>Search this book on Google!</h3>
+<ul>
+<i class="bi bi-search"></i> <a href="https://www.google.com/search?q={{ book.isbn }}">Search here</a>
+</ul>
 {% endblock %}
