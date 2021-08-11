@@ -6,10 +6,10 @@
 }
 
 h1{
-  color:rgb(39, 46, 25);
-  font-family:unset;
+  color:black;
+  font-family:initial;
   font-weight: bold;
-  font-weight: 500;
+  font-weight: 300;
   margin: 0;
   text-align: center;
   margin: 20px 0 30px;
@@ -22,19 +22,21 @@ h2{
   margin: 0;
   text-align: center;
   margin: 10px 0 20px;
+  
 }
 
 body{
   position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    min-height: 650px;
-    z-index: -1;
-    background-image: url(../img/green_book.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 650px;
+  z-index: -1;
+  background-image: url(../img/miles.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 h3{
@@ -66,7 +68,7 @@ h3{
 
 }
 div.href{
-  color: black;
+  color:black;
 }
 
 form{
@@ -76,4 +78,61 @@ form{
 #container{
   box-sizing: border-box;
   opacity: unset;
+}
+.allbooks{
+  text-align: justify; 
+  text-align-last: center;
+}
+.display-books{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 700px;
+  color:black;
+  font-size: large;
+  /* font-weight: bold; */
+  display: block;
+  /* background-color: rgb(160, 47, 117); */
+  /* background-color:rgb(110, 110, 160); */
+  background-color:rgb(139, 138, 138);
+  /* opacity: .5; */
+  padding: 0 18px;
+  padding: 20px 20px;
+  box-shadow: 0px 0px 3px #848484;
+  z-index: 2;
+  margin-left: 230px;
+  margin-right: 230px;
+  overflow: scroll;
+  
+}
+.container-fluid{
+  color: blue;
+}
+
+.links{
+  color:black;
+}
+
+.logintitle{
+  color:white;
+}
+/* .container{
+  opacity: 0.5;
+} */
+.card-body{
+  color:white;
+}
+
+li{
+  position: center;
+}
+
+.w-100{
+  /* margin-left: 50px; */
+  margin-right: -70px;
+  /* margin-left: 230px; */
+  margin-right: 230px;
+}
+
+section{
+  color: white;
 }

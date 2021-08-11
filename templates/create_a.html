@@ -2,7 +2,7 @@
 
 {% block body %}
 <link href="/static/css/homepage.css" rel="stylesheet">
-  <ul>
+  <!-- <ul>
   <h1>Create an Account</h1>
   <form action="/users" method="POST">
   </ul>
@@ -43,5 +43,51 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </p>
 </ul>
-  </form>
+  </form> -->
+  <form action="/users" method="POST">  
+    <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-">
+            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+    
+                <div class="mb-md-5 mt-md-4 pb-5">
+    
+                  <h2 class="logintitle">Sign Up</h2>
+                  <!-- <p class="text-white-50 mb-5">Please enter your username and password!</p> -->
+    
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" id="username1" class="form-control form-control-lg" name="username" />
+                    <label class="form-label" for="typeEmailX">Username</label>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" id="username" class="form-control form-control-lg" name="first_name" />
+                    <label class="form-label" for="typeEmailX">First name</label>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" id="username" class="form-control form-control-lg" name="last_name" />
+                    <label class="form-label" for="typeEmailX">Last name</label>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="username" class="form-control form-control-lg" name="email" />
+                    <label class="form-label" for="typeEmailX">Email</label>
+                  </div>
+    
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="Password" class="form-control form-control-lg" name="password" />
+                    <label class="form-label" for="typePasswordX">Password</label>
+                  </div>
+    
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign up</button>
+    
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </form>
   {% endblock %}

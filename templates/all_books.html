@@ -4,21 +4,17 @@
 {% block body %}
 <div class="header">
 <link href="/static/css/homepage.css" rel="stylesheet">
-  <h1>All Books</h1>
+  
 </div>
 
-  <div class="display-books" id="booklist">
-      {% for book in books %}
-        <li>
-          <a href="/books/{{ book.book_id }}">
-          {{ book.title }}
-          </a>
-        </li>
-      </div>      
+<div class="display-books" id="booklist">
+  <h1>All Books</h1>  
+  {% for book in books %}
+    <div class="allbooks" id= "squarebook">
+        <a class= "links" href="/books/{{ book.book_id }}">
+        {{ book.title }}
+        </a>
+    </div>      
       {% endfor %}
-
-   <div id="container"></div>
-
-   </div>   
     
 {% endblock %}
