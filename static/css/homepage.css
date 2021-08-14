@@ -83,29 +83,29 @@ form{
   text-align: justify; 
   text-align-last: center;
 }
+
 .display-books{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  height: 700px;
+  background-image: url(../img/book_open.png);
+  background-repeat: no-repeat;
+  /* margin-top: 50px; */
+  margin-bottom: 0px;
+  height: 735px;
   color:black;
   font-size: large;
-  /* font-weight: bold; */
+  font-weight: bold;
   display: block;
   /* background-color: rgb(160, 47, 117); */
   /* background-color:rgb(110, 110, 160); */
-  background-color:rgb(139, 138, 138);
+  /* background-color:rgb(139, 138, 138); */
   /* opacity: .5; */
-  padding: 0 18px;
-  padding: 20px 20px;
-  box-shadow: 0px 0px 3px #848484;
+  /* padding: 0 18px; */
+  /* padding: 20px 20px; */
+  /* box-shadow: 0px 0px 3px #848484; */
   z-index: 2;
-  margin-left: 230px;
-  margin-right: 230px;
+  margin-left: 70px;
+  margin-right: 70px;
   overflow: scroll;
-  
-}
-.container-fluid{
-  color: blue;
+
 }
 
 .links{
@@ -136,3 +136,4 @@ li{
 section{
   color: white;
 }
+
