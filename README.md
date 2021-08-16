@@ -1,10 +1,13 @@
-#MY BOOK SHELF 
-My Book Shelf is a full-stack web application for searching books and get 
+# MY BOOK SHELF 
+My Book Shelf is a full-stack web application that act like as a catalog for books for people  in love with books. It allows users to search books, view informations and save the books you want to remember later.
 
-##Contents
-* [Features](#features)
+
+searching books and find results.
+
+## Contents
 * [Technologies & Stack](#techstack)
 * [Set-up & Installation](#configuration)
+* [Features](#features)
 * [About the Developer](#about)
 
 ##  <a name="techstack"></a> Technologies and Stack
@@ -23,27 +26,27 @@ Install [postgreSQL](https://www.postgresql.org/) for the relational database.<b
 
 Clone or fork repository:
 ```bash
-git clone https://github.com/elizabeteroschel/mybookshelf.git
+$ git clone https://github.com/elizabeteroschel/mybookshelf.git
 ```
 Create and activate a virtual environment inside the mybooksheldirectory:
 ```bash
-virtualenv env
-source env/bin/activate
+$ virtualenv env
+$ source env/bin/activate
 ```
 
 Install dependencies:
 ```bash
-pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 With PostgreSQL, create the mybookshelf database:
 ```bash
-createdb mybookshelf
+$ createdb mybookshelf
 ```
 
 Create all tables and relations in the database and seed all data:
 ```bash
-python3 seed.py
+$ python3 seed.py
 ```
 Run the app from the command line:
 ```bash
@@ -51,12 +54,11 @@ $ python3 server.py
 ```
 
 ## <a name="features"></a> Features 
-User registration, log-in, & log-out
-<br>
-<br>
-![](https://gph.is/g/aNbgjzd)
-<br>
-
+User-friendly homepage. 
+User registration, log-in, & log-out.
+Search books and get information about it.
+User profile.
+Option to save favorite book in user`s profile
 
 ## <a name="about"></a>About the Developer
 My Book Shelf creator Elizabete Roschel graduated from the University of São Jose, São Paulo  with a degree in Veterinary medicine. This is her first full-stack project. She can be found on [LinkedIn](https://www.linkedin.com/in/elizabete-freire-roschel-b2902215a/) and on [Github](https://github.com/elizabeteroschel).
